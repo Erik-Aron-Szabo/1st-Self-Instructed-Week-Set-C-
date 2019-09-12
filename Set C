@@ -1,0 +1,42 @@
+def print_numbers(x):
+    print(x)
+
+numbers = []
+# num = numbers
+
+def asking_numbers():
+    while True:
+        try:
+            num = input("(Press Enter to continue)\nGive me an integer: ")
+            print("")
+            if num == "":
+                break
+            else:
+                numbers.append(int(num))
+        except:
+            print("Please give me an integer!")
+            print("")
+asking_numbers()
+
+
+print_numbers(numbers) # number_list
+iterations = 1
+
+N = len(numbers)
+
+
+
+
+
+
+
+while iterations < N:
+    j = 0
+    while j <= (N-2):
+        while numbers[j] > numbers[j+1]:
+            temp = numbers[j+1]
+            numbers[j+1] = numbers[j]
+            numbers[j] = temp
+        j += 1
+    iterations += 1
+print_numbers(numbers)
